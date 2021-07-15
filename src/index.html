@@ -14,4 +14,26 @@
       <span class="splash-screen__credits">by UnchartedBull</span>
     </app-root>
   </body>
+  
+  <script>
+    var lastPress = Date.now();
+    var delay = 60000; //delay in milliseconds
+
+    document.addEventListener("click", function(e){
+        console.log(`${Date.now()} ${lastPress} ${Date.now()-lastPress}`);
+
+        if (Date.now()-lastPress>=delay){
+            
+            e.stopPropagation();
+            console.log(`stopped`);
+
+        }
+        else{
+            console.log(`not stopped`);
+        }
+        
+        lastPress = Date.now();
+        
+    },true)
+  </script>
 </html>
