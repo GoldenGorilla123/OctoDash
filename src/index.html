@@ -25,6 +25,7 @@
         if (Date.now()-lastPress>=delay){
             
             e.stopPropagation();
+	          e.stopImmediatePropagation();
             console.log(`stopped`);
 
         }
